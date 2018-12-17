@@ -1,0 +1,21 @@
+﻿@model CIP.HIS.ViewModels.HomeViewModel
+
+<h2>Patients</h2>
+<h4>Scheduled- Patients</h4>
+
+@foreach (var patient in Model.Patients)
+{
+    <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail">
+            <img src="@patient.ImageThumbnailUrl" alt="">
+            <div class="caption">
+                <h3 class="pull-right">@patient.GivenName</h3>
+                <h3>
+                    <a>@patient.Name</a>
+                </h3>
+                <p>@patient.Email</p>
+            </div>
+        </div>
+    </div>
+}
+
