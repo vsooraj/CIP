@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CIP.HIS.Models;
+using CIP.HIS.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,12 +11,23 @@ namespace CIP.HIS.Controllers
 {
     public class PatientRegistrationController : Controller
     {
-        // GET: PatientRegistration
-        public ActionResult Index()
+        private readonly IPatientRepository _patientRepository;
+
+        public PatientRegistrationController(IPatientRepository patientRepository)
         {
-            return View();
+            _patientRepository = patientRepository;
         }
 
+        public ViewResult Index()
+        {
+            var homeViewModel = new HomeViewModel
+            {
+                Patients = _patientRepository.Patients
+            };
+
+            return View(homeViewModel);
+
+        }
         // GET: PatientRegistration/Details/5
         public ActionResult Details(int id)
         {

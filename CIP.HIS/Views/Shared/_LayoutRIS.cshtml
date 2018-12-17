@@ -54,11 +54,12 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-left">
-                <li><a asp-action="Index">EHR</a></li>
-                <li><a href="#">EMR</a></li>
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PMS <span class="caret"></span></a>
                     <ul class="dropdown-menu">
+                        <li><a asp-action="Index">EHR</a></li>
+                        <li><a href="#">EMR</a></li>
                         <li><a href="/LIS/Index">Lab Information System</a></li>
                         <li><a href="#">Doctor Schedule & Appointments</a></li>
                         <li><a href="#">Doctor Consultation & Electronic Medical Record</a></li>
@@ -96,8 +97,6 @@
 
         </div>
     </nav>
-
-
 
     <div class="container">
         <div class="row">
