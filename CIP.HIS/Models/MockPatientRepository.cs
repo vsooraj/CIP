@@ -79,5 +79,15 @@ namespace CIP.HIS.Models
                 };
             }
         }
+
+        public void Create(Patient patient)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public IEnumerable<Patient> Read()
+        {
+            return Patients;
+        }
     }
 }

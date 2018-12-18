@@ -17,7 +17,7 @@ namespace CIP.HIS.Controllers
         {
             var homeViewModel = new HomeViewModel
             {
-                Patients = _patientRepository.Patients
+                Patients = _patientRepository.Read()
             };
 
             return View();

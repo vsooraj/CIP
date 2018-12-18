@@ -4,6 +4,8 @@ namespace CIP.HIS.Models
 {
     public interface IPatientRepository
     {
-        IEnumerable<Patient> Patients { get; }
+        IEnumerable<Patient> Read();
+
+        void Create(Patient patient);
     }
 }

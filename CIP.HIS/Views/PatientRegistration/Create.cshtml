@@ -20,11 +20,12 @@
                     Create
                 </div>
                 <div class="panel-body">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <form asp-action="Create">
+                    <form asp-action="Create">
+                        <div class="row">
+                            <div class="col-lg-6">
+
                                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                               
+
                                 <div class="form-group">
                                     <label asp-for="Name" class="control-label"></label>
                                     <input asp-for="Name" class="form-control" />
@@ -60,12 +61,12 @@
                                     <input asp-for="BirthDate" class="form-control" />
                                     <span asp-validation-for="BirthDate" class="text-danger"></span>
                                 </div>
-                                
-                          
-                        </div>
-                        <!-- /.col-lg-6 (nested) -->
-                        <div class="col-lg-6">
-                           
+
+
+                            </div>
+                            <!-- /.col-lg-6 (nested) -->
+                            <div class="col-lg-6">
+
                                 <div class="form-group">
                                     <div class="checkbox">
                                         <label>
@@ -110,14 +111,15 @@
                                 <div class="form-group">
                                     <input type="submit" value="Create" class="btn btn-default" />
                                 </div>
-                            </form>
-                           
-                        <!-- /.col-lg-6 (nested) -->
-                    </div>
-                    <!-- /.row (nested) -->
+
+
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                    </form>
+                    <!-- /.panel-body -->
                 </div>
-                <!-- /.panel-body -->
-            </div>
             <!-- /.panel -->
         </div>
         <!-- /.col-lg-12 -->

@@ -22,7 +22,7 @@ namespace CIP.HIS.Controllers
         {
             var homeViewModel = new HomeViewModel
             {
-                Patients = _patientRepository.Patients
+                Patients = _patientRepository.Read()
             };
 
             return View(homeViewModel);
@@ -43,15 +43,23 @@ namespace CIP.HIS.Controllers
         // POST: PatientRegistration/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Patient patient)
         {
             try
-            {
-                // TODO: Add insert logic here
+            { 
+                if (ModelState.IsValid)
+                {
+                    // TODO: Add insert logic here
+                    _patientRepository.Create(patient);
 
-                return RedirectToAction(nameof(Index));
+                    return RedirectToAction(nameof(Index));
+                }
+                else {
+
+                return View(patient);
+                }
             }
-            catch
+            catch(Exception e)
             {
                 return View();
             }
